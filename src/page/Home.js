@@ -34,7 +34,7 @@ export default class Home extends React.Component {
   }
 
   handleSearchClick() {
-    fetch(`http://localhost:3000/cars?brand=${this.state.brand}`)
+    fetch(`${config.baseURL}/cars?brand=${this.state.brand}`)
       .then((res) => res.json())
       .then((result) => {
         this.setState({
