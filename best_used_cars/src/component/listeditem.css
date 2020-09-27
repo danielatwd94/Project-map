@@ -1,0 +1,11 @@
+.ListedItem {
+  display: flex;
+}
+
+.ListedItem img {
+  flex: 0 1 25%;
+  max-width: 25%;
+}
+.ListedItem table {
+  flex: 1 0 75%;
+}

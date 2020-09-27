@@ -1,0 +1,35 @@
+.Detail .Wrapper {
+  display: flex;
+}
+
+.Detail .ImageContainer {
+  flex: 0 0 50%;
+  position: relative;
+}
+
+.Detail .ImageContainer img {
+  width: 100%;
+}
+
+.Detail .DetailContainer {
+  flex: 0 0 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-self: stretch;
+}
+
+.Detail .price {
+  flex: 0 1 40%;
+  font-weight: bold;
+  font-size: 24px;
+  border-bottom: 1px solid gray;
+}
+
+.Detail .Contact {
+  flex: 0 0 20%;
+}
+
+.Detail .DetailList {
+  flex: 1 0 40%;
+}
