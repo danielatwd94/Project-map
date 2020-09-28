@@ -26,9 +26,12 @@ app.get("/brands", (req, res) => {
 });
 app.get("/cars", (req, res) => {
   const brand = req.query.brand;
+  const fromYear = req.query.fromYear || 0;
+  const toYear = req.query.toYear || 3000;
+
   client.query(
-    "SELECT  cars.*,brands.name AS brandname FROM cars LEFT JOIN brands ON cars.brand = brands.id WHERE brand = $1",
-    [brand],
+    "SELECT  cars.*,brands.name AS brandname FROM cars LEFT JOIN brands ON cars.brand = brands.id WHERE brand = $1 AND (cars.year >= $2) AND (cars.year <= $3)",
+    [brand, fromYear, toYear],
     (err, response) => {
       if (response) {
         res.json(response.rows);
