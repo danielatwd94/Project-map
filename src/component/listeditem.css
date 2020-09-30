@@ -1,10 +1,12 @@
 .ListedItem {
   display: flex;
+  margin-bottom: 50px;
 }
 
 .ListedItem img {
   flex: 0 1 25%;
   max-width: 25%;
+  padding-right: 50px;
 }
 .ListedItem table {
   flex: 1 0 75%;

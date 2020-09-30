@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import Home from "./page/Home.js";
 import Detail from "./page/Detail.js";
+import "./App.css";
 
 function App() {
   return (

@@ -30,10 +30,7 @@ export default class Home extends React.Component {
         });
       });
   }
-  /**
-   *
-   * @param {Event} e OnChange event
-   */
+
   handleBrandChange(e) {
     this.setState({ brand: e.target.value });
   }
@@ -63,43 +60,47 @@ export default class Home extends React.Component {
 
     return (
       <div className="Home">
-        <div className="Filter">
-          <Form>
-            <Form.Control as="select" onChange={this.handleBrandChange}>
-              <option>Please select a brand</option>
-              {brands.map((brand) => (
-                <option key={brand.id} value={brand.id}>
-                  {brand.name}
-                </option>
-              ))}
-            </Form.Control>
-            <Form.Group>
-              <Form.Label>Type a year</Form.Label>
-              <Form.Row>
-                <Col>
-                  <Form.Control
-                    type="text"
-                    placeholder="from"
-                    onChange={this.handleFromYearChange}
-                  ></Form.Control>
-                </Col>
-                <Col>
-                  <Form.Control
-                    type="text"
-                    placeholder="to"
-                    onChange={this.handleToYearChange}
-                  ></Form.Control>
-                </Col>
-              </Form.Row>
-            </Form.Group>
-          </Form>
+        <div className="Porsche">
+          <div className="Filter">
+            <Form>
+              <Form.Control as="select" onChange={this.handleBrandChange}>
+                <option value="">Please select a brand</option>
+                {brands.map((brand) => (
+                  <option key={brand.id} value={brand.id}>
+                    {brand.name}
+                  </option>
+                ))}
+              </Form.Control>
+              <Form.Group>
+                <Form.Label>Type a year</Form.Label>
+                <Form.Row>
+                  <Col>
+                    <Form.Control
+                      type="text"
+                      placeholder="from"
+                      onChange={this.handleFromYearChange}
+                    ></Form.Control>
+                  </Col>
+                  <Col>
+                    <Form.Control
+                      type="text"
+                      placeholder="to"
+                      onChange={this.handleToYearChange}
+                    ></Form.Control>
+                  </Col>
+                </Form.Row>
+              </Form.Group>
+            </Form>
 
-          <Button
-            onClick={this.handleSearchClick}
-            disabled={this.state.brand === null}
-          >
-            Search
-          </Button>
+            <Button
+              onClick={this.handleSearchClick}
+              disabled={!this.state.brand}
+            >
+              Search
+            </Button>
+          </div>
+          <img src="images/mustang.jpg" alt="another car"></img>
+          <img src="images/porsche.jpg" alt="a car"></img>
         </div>
         <div>
           {this.state.cars.map((car) => (
